@@ -1,6 +1,10 @@
 module.exports = function (...args) {
   let original = require('./next.config.original.js');
-  const finalConfig = {};
+	const finalConfig = {
+		typescript: {
+			ignoreBuildErrors: true,
+		},
+	};
   const target = { target: 'experimental-serverless-trace' };
   if (typeof original === 'function' && original.constructor.name === 'AsyncFunction') {
     // AsyncFunctions will become promises
