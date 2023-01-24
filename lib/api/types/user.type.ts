@@ -37,7 +37,7 @@ const Profile = objectType({
             where: { username },
           })
           .followedBy({ select: { followerId: true }, where: { followerId: context.currentUser.id } });
-        return !!(follows.length ?? 0);
+        return !!(follows?.length ?? 0);
       },
     });
   },
