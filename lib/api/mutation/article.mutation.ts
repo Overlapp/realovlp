@@ -30,7 +30,8 @@ const ArticleMutation = extendType({
             author: { connect: { id: context.currentUser!.id } },
             slug: Utility.slugify(title),
             tags: {
-              create: tagList?.map((name = '') => {
+              create: tagList?.map((name) => {
+                name = name ?? '';
                 return {
                   tag: {
                     connectOrCreate: {
