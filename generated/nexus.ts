@@ -263,7 +263,10 @@ export interface NexusGenFieldTypeNames {
 export interface NexusGenArgTypes {
   Mutation: {
     createArticle: { // args
-      input: NexusGenInputs['ArticleInput']; // ArticleInput!
+      body?: string | null; // String
+      description: string; // String!
+      tagList?: Array<string | null> | null; // [String]
+      title: string; // String!
     }
     createComment: { // args
       input: NexusGenInputs['CommentInput']; // CommentInput!

@@ -26,7 +26,7 @@ export default function ArticlesViewer({ tabs, isFeedQuery, queryFilter }: Artic
     fetchPolicy: 'cache-and-network',
     nextFetchPolicy: 'cache-first',
     notifyOnNetworkStatusChange: true,
-    onError: () => error({ content: fallbackMessage, mode: 'alert' }),
+    // onError: () => error({ content: fallbackMessage, mode: 'alert' }),
     onCompleted: (data) => {
       if (data && data.articles.length === 0) info({ content: noArticlesMessage, mode: 'alert' });
     },
@@ -36,7 +36,7 @@ export default function ArticlesViewer({ tabs, isFeedQuery, queryFilter }: Artic
     fetchPolicy: 'cache-and-network',
     nextFetchPolicy: 'cache-first',
     notifyOnNetworkStatusChange: true,
-    onError: () => error({ content: fallbackMessage, mode: 'alert' }),
+    // onError: () => error({ content: fallbackMessage, mode: 'alert' }),
     onCompleted: (data) => {
       if (data && data.feed.length === 0) info({ content: noArticlesMessage, mode: 'alert' });
     },

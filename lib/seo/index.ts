@@ -1,14 +1,14 @@
 import { BASE_URL } from '../constants';
 
 const defaultSeo = {
-  defaultTitle: 'Conduit',
-  titleTemplate: '%s | Conduit',
-  description: 'A fullstack implementation of the RealWorld App using Next.js, Prisma ORM and Apollo GraphQL stack',
+  defaultTitle: 'Overlapp',
+  titleTemplate: '%s | Overlapp',
+  description: 'Overlapp is the app for connecting over things you like, dislike, and want to do.',
   openGraph: {
     type: 'website',
-    title: 'Conduit',
-    description: 'A fullstack implementation of the RealWorld App using Next.js, Prisma ORM and Apollo GraphQL stack',
-    site_name: 'next-real-world',
+    title: 'Overlapp',
+    description: 'Overlapp is the app for connecting over things you like, dislike, and want to do.',
+    site_name: 'overlapp',
     url: BASE_URL,
   },
   twitter: {

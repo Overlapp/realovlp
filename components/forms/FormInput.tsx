@@ -28,8 +28,8 @@ export default function FormInput<TFormValues extends Record<string, any>>({
   return (
     <>
       <ControlInput
-        mode={error ? 'failed' : 'default'}
-        aria-invalid={!!error}
+				mode={error ? 'failed' : 'default'}
+				aria-invalid={!!error}
         {...props}
         {...field}
         disabled={isSubmitting}

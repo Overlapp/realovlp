@@ -59,7 +59,7 @@ export default function CommentSection({ article }: { article: ArticleViewFragme
                   <CustomLink href='/register' mode='primary' underlined>
                     sign up
                   </CustomLink>{' '}
-                  to add comments on this article.
+										to add comments here.
                 </p>
               )}
             </>

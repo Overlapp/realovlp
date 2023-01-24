@@ -56,14 +56,25 @@ export default function ArticleEditor({ article, user }: { article?: EditArticle
       <div className='container flex flex-wrap flex-col items-center mx-auto mt-12'>
         <div className='w-full md:w-9/12'>
           <Form<ArticleInput> onSubmit={onSubmit} schema={articleInputSchema} mode='onChange' defaultValues={init}>
-            <fieldset className='flex flex-col justify-center mx-auto' aria-live='polite'>
-              <FormInput<ArticleInput> name='title' placeholder='Article title' />
-              <FormInput<ArticleInput> name='description' placeholder="What's this article about?" />
-              <FormTextarea<ArticleInput> name='body' placeholder='Write your article (in markdown)' rows={8} />
-              <TagInput<ArticleInput> name='tagList' placeholder='Enter tags' />
-
-              <Submit size='l' className='self-end' strict>
-                Publish Article
+						<fieldset className='flex flex-col justify-center mx-auto' aria-live='polite'>
+							<span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+								Title
+							</span>
+							<FormInput<ArticleInput> name='title' placeholder='Title' />
+							<span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+								Image URL
+							</span>
+							<FormInput<ArticleInput> name='description' placeholder="Please share an image" />
+							<span className="block text-sm font-medium text-slate-700">
+								Description
+							</span>
+							<FormTextarea<ArticleInput> name='body' placeholder="Do share more information if you want to" />
+							<span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+								Category/Tags
+							</span>
+							<TagInput<ArticleInput> name='tagList' placeholder='Enter tags separated by space or comma eg. music, movie' />
+							<Submit size='l' className='self-end text-black' strict>
+								Submit
               </Submit>
             </fieldset>
           </Form>

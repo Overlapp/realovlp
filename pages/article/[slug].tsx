@@ -26,7 +26,10 @@ const ArticlePage = ({ article }: { article: ArticleViewFragment }) => {
       <ArticleJsonMeta article={article} />
       <ArticlePageBanner article={article} />
 
-      <div className='container flex flex-wrap flex-col mx-auto mt-8'>
+			<div className='container flex flex-wrap flex-col mx-auto mt-8'>
+				<div className='w-1/3'>
+					<img src={description} alt={title} className='mb-4' />
+				</div>
         <div className='w-full'>
           <Marked content={article.body} className='mb-4' />
         </div>

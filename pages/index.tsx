@@ -35,7 +35,7 @@ const Home: NextPage = () => {
     <Wrapper title='Home'>
       <HomeBanner />
       <div className='container flex flex-col-reverse justify-center mt-8 mx-auto md:flex-row'>
-        <main className='basis-9/12 shrink-0'>
+				<main className='basis-9/12 shrink-0'>
           <ArticlesViewer {...{ tabs, queryFilter, isFeedQuery }} />
         </main>
         <aside className='w-full sticky self-start md:top-16 md:ml-8'>

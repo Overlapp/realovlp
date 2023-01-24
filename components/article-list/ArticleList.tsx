@@ -13,13 +13,13 @@ export default function ArticleList({ articles, loading }: ArticleListProps) {
   const { message } = useMessageHandler();
   if (loading || !articles) return <LoadingSpinner />;
   return (
-    <div className='mb-4 bg-gray-50 rounded-lg border border-gray-100 pt-4'>
+		<div className=''>
       {message && message.mode === 'alert' ? (
         <Alert />
       ) : (
-        <ul className='divide-y divider-gray-200'>
+					<ul className='grid grid-cols-1 md:grid-cols-3 gap-3'>
           {articles?.map((article, index) => (
-            <li key={article.slug}>
+						<li className='p-2 rounded-lg shadow-lg' key={article.slug}>
               <ArticlePreview article={article} />
             </li>
           ))}

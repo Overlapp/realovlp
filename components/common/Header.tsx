@@ -17,15 +17,16 @@ export default function Header() {
     { text: 'Sign up', href: '/register' },
   ];
   const userNavItems: NavItemProps[] = [
-    { text: 'New Article', href: '/editor', icon: 'ion-compose' },
+		{ text: 'New Post', href: '/editor', icon: 'ion-compose' },
     { text: 'Settings', href: '/settings', icon: 'ion-gear-a' },
     { text: `${user?.username}`, href: `/profile/${user?.username}` },
   ];
   return (
-    <nav className='bg-white py-2.5 rounded-b fixed w-full z-20 shadow-md shadow-gray-300'>
+		<nav className='bg-white py-2.5 rounded-b fixed w-full z-20 shadow-md shadow-yellow-300'>
       <div className='container flex flex-wrap justify-between items-center mx-auto'>
-        <CustomLink className='flex items-center' href='/'>
-          <span className='self-center text-primary text-2xl font-titillium whitespace-nowrap '>conduit</span>
+				<CustomLink className='flex items-center' href='/'>
+					<img src='https://www.letsoverlapp.com/img/svg/logo.png' alt="logo" width={160} height={40} />
+					{/* <span className='self-center text-primary text-2xl font-titillium whitespace-nowrap '>Overlapp</span> */}
         </CustomLink>
         <button
           onClick={toggleExpand()}

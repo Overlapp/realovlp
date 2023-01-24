@@ -27,18 +27,19 @@ export default function TagInput<TFormValues extends Record<string, any> & { tag
     dismiss();
   }
 
-  function onChange(): (ev: React.ChangeEvent<HTMLInputElement>) => void {
+	function onChange(): (ev: React.ChangeEvent<HTMLInputElement>) => void {
     return ({ target: { value } }) => {
       setTag(value);
     };
   }
   function onKeyDown(): (ev: React.KeyboardEvent) => void {
-    return (ev) => ev.key === 'Enter' && ev.preventDefault();
+
+		return (ev) => ev.key === 'Enter' && ev.preventDefault();
   }
 
-  function onAddTag(): (ev: React.KeyboardEvent) => void {
+	function onAddTag(): (ev: React.KeyboardEvent) => void {
     return (ev) => {
-      if (ev.key === 'Enter') {
+			if (ev.key === 'Enter' || ev.key === ' ' || ev.key === ',') {
         ev.preventDefault();
         if (
           tag.trim().length > 0 &&
@@ -77,7 +78,7 @@ export default function TagInput<TFormValues extends Record<string, any> & { tag
         disabled={isSubmitting}
         onChange={onChange()}
         onKeyUp={onAddTag()}
-        onKeyDown={onKeyDown()}
+				onKeyDown={onAddTag()}
         onBlur={onBlur()}
       />
       <TagList tagList={value} onRemoveItem={onRemoveTag} className='mt-2' />

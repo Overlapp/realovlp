@@ -18,10 +18,10 @@ export default function ArticleAuthorInfo({ inlined = false, dark = false, autho
   return (
     <div className={`flex flex-wrap ${inlined ? 'items-center' : 'items-end'}`}>
       <CustomLink href={`/profile/${username}`}>
-        <CustomImage src={image} alt={username} />
+				<CustomImage size='s' src={image} alt={username} />
       </CustomLink>
       <div className={`flex ml-2 ${inlined ? 'flex-wrap items-center' : 'flex-col items-start'}`}>
-        <CustomLink href={`/profile/${username}`} underlined mode={`${dark ? 'reverse' : 'secondary'}`}>
+				<CustomLink href={`/profile/${username}`} underlined mode={`${dark ? 'reverse' : 'secondary'}`} className="text-sm" >
           {username}
         </CustomLink>
         <span className={`text-xs text-gray-400 ${inlined && 'ml-2'}`}>{dateFormat(new Date(createdAt))}</span>

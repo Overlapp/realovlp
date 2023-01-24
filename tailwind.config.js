@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors')
 
 module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
@@ -12,12 +13,9 @@ module.exports = {
         tab: '300px',
       },
       colors: {
-        primary: '#5cb85c',
-        'primary-300': '#a3d7a3',
-        'primary-600': '#449d44',
-        'primary-700': '#419641',
-        'primary-800': '#398439',
-        'primary-900': '#2d672d',
+        primary: colors.yellow,
+				secondary: colors.blue,
+				'midnight': '#121063',
       },
       fontFamily: {
         sans: ['Noto Sans JP', ...defaultTheme.fontFamily.sans],
@@ -46,6 +44,9 @@ module.exports = {
         },
       }),
     },
+	},
+	corePlugins: {
+    aspectRatio: false,
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/aspect-ratio')],
 };

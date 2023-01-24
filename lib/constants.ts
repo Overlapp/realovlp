@@ -7,7 +7,7 @@ export const TOKEN_PREFIX = 'Bearer ';
 
 export const PUBLIC_JWK = {
   kty: 'RSA' as const,
-  n: '2n-FvDaqq3XdC3VA8478T-tdM8qGoKU56ljNO6w8u1as8XrozsL8uyINEvToQh8h4UsggRnSeO-1kvROYQqe8eVI0LrLJdQPvV9MaTpmhaqkcRr7LGi4qjaOzi3J0CPavTnHCNjFVgyvaz2_8-7G9WuH9xx-Xov02vmK-2K6Cp0HhUPat3a7w258NmxW-Obr4DOyhCi-pCLzq8eRQfJ75MWEcWk1psmsDtlfwpU0qjxaO94b5qJwzaB2NMPyrk-9V9B2UhI9P74IQAEg-eE7bwJILaOXI6p6FmfGmssi6T-Ntk1kCSktu9IyhBZZhWU8PZasKEnXmcAkjl8-6-g-hQ',
+  n: 'l-JREv8NvPygVE2AWtQ-tU3JaePfiLSF1hJgMRlocWN_7Brt9M_QpPIWloej7TFLATi0vV1QkWP7J0tPx-xDYNUKYnagYHDb1JGDmYkMxJFJKn4nmaeIfhvAwvVLndpb7e9GkgAJBuYkfHOIbnKK4hGV4OKCfgMf3l_CY0gbbfrEyeiW1NLUNxgILN3B6O5XtA9ZCFbMSaknQ_EsH6GD055KZ_o_C9xlaq0SlJN2sxbfLTCcicsYhj62-kG4rM1mfzYuzkc-pVkrDxhKLNq1nMJwB7zlNgGD2b6Y8pEl67pTUC5ri04fiEwg8EyrHsbPFEI3-UEIaFRFGhpv81iLzQ',
   e: 'AQAB',
 };
 

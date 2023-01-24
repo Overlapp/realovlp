@@ -5,7 +5,7 @@ function ControlInput(
   { mode = 'default', label, type = 'text', size = 'm', className = '', disabled = false, ...props }: InputProps,
   ref: Ref<HTMLInputElement>
 ) {
-  return (
+	return (
     <input
       ref={ref}
       type={type}
@@ -13,7 +13,7 @@ function ControlInput(
       className={joinInputStyles({ mode, size, disabled, className })}
       autoComplete={`${type === 'password' ? 'off' : 'on'}`}
       {...props}
-    />
+		/>
   );
 }
 

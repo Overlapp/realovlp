@@ -1,6 +1,6 @@
 import { Article, Prisma } from '@prisma/client';
 import { AuthenticationError, UserInputError } from 'apollo-server-micro';
-import { arg, extendType, nonNull, stringArg } from 'nexus';
+import { arg, extendType, list, nonNull, nullable, stringArg } from 'nexus';
 import { articleInputSchema } from '../../validation/schema';
 import { Context } from '../context';
 import Utility from '../utils';
@@ -11,13 +11,16 @@ const ArticleMutation = extendType({
     t.nonNull.field('createArticle', {
       type: 'Article',
       args: {
-        input: nonNull(arg({ type: 'ArticleInput' })),
+        title: nonNull(stringArg()),
+        description: nonNull(stringArg()),
+        body: nullable(stringArg()),
+        tagList: nullable(list(stringArg())),
       },
       authorize: (_, _args, ctx: Context) => !!ctx.currentUser,
       validate: () => ({
         input: articleInputSchema,
       }),
-      resolve: (_, { input: { title, description, body, tagList } }, context: Context) => {
+      resolve: (_, { title, description, body, tagList }, context: Context) => {
         return context.prisma.article.create({
           data: {
             title,

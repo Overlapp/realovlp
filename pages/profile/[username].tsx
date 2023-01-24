@@ -20,8 +20,8 @@ const Profile: NextPage = () => {
       loadProfile({ variables: { username } });
       setQueryFilter(favorites ? { favorited: username } : { author: username });
       setTabs([
-        { name: 'My Articles', href: `/profile/${username}` },
-        { name: 'Favorited Articles', href: `/profile/${username}?favorites=true` },
+				{ name: 'My Posts', href: `/profile/${username}` },
+				{ name: 'My Favorites', href: `/profile/${username}?favorites=true` },
       ]);
     }
   }, [username, favorites, router.isReady, loadProfile]);
