@@ -13,8 +13,8 @@ const ArticleMutation = extendType({
       args: {
         title: nonNull(stringArg()),
         description: nonNull(stringArg()),
-        body: nullable(stringArg()),
-        tagList: nullable(list(stringArg())),
+        body: nonNull(stringArg()),
+        tagList: nonNull(list(stringArg())),
       },
       authorize: (_, _args, ctx: Context) => !!ctx.currentUser,
       validate: () => ({

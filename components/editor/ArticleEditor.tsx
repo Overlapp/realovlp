@@ -41,7 +41,8 @@ export default function ArticleEditor({ article, user }: { article?: EditArticle
     onError: (err) => handleErrors({ err, mode: 'alert' }),
   });
 
-  async function onSubmit(input: ArticleInput) {
+	async function onSubmit(input: ArticleInput) {
+		input.body = input.body ?? '';
     article
       ? await updateArticle({ variables: { slug: article.slug, input } })
       : await createArticle({ variables: { input } });

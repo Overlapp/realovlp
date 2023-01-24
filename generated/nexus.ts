@@ -263,9 +263,9 @@ export interface NexusGenFieldTypeNames {
 export interface NexusGenArgTypes {
   Mutation: {
     createArticle: { // args
-      body?: string | null; // String
+      body: string; // String!
       description: string; // String!
-      tagList?: Array<string | null> | null; // [String]
+      tagList: Array<string | null>; // [String]!
       title: string; // String!
     }
     createComment: { // args
