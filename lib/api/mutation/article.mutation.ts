@@ -11,16 +11,13 @@ const ArticleMutation = extendType({
     t.nonNull.field('createArticle', {
       type: 'Article',
       args: {
-        title: nonNull(stringArg()),
-        description: nonNull(stringArg()),
-        body: nonNull(stringArg()),
-        tagList: nonNull(list(stringArg())),
+        input: nonNull(arg({ type: 'ArticleInput' })),
       },
       authorize: (_, _args, ctx: Context) => !!ctx.currentUser,
       validate: () => ({
         input: articleInputSchema,
       }),
-      resolve: (_, { title, description, body, tagList }, context: Context) => {
+      resolve: (_, { input: { title, description, body, tagList } }, context: Context) => {
         body = body ?? '';
         return context.prisma.article.create({
           data: {
@@ -31,7 +28,6 @@ const ArticleMutation = extendType({
             slug: Utility.slugify(title),
             tags: {
               create: tagList?.map((name) => {
-                name = name ?? '';
                 return {
                   tag: {
                     connectOrCreate: {

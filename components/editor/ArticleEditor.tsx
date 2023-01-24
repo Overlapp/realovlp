@@ -42,7 +42,7 @@ export default function ArticleEditor({ article, user }: { article?: EditArticle
   });
 
 	async function onSubmit(input: ArticleInput) {
-		input.body = input.body ?? '';
+		input.body = input.body || '';
     article
       ? await updateArticle({ variables: { slug: article.slug, input } })
       : await createArticle({ variables: { input } });
