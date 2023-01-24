@@ -21,6 +21,7 @@ const ArticleMutation = extendType({
         input: articleInputSchema,
       }),
       resolve: (_, { title, description, body, tagList }, context: Context) => {
+        body = body ?? '';
         return context.prisma.article.create({
           data: {
             title,
